@@ -1,9 +1,10 @@
 {
-  "name": "nodeJs_udemy",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon app.js"
   },
   "devDependencies": {
