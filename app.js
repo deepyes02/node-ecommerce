@@ -1,6 +1,13 @@
-const http = require('http');
-const routes = require("./routes");
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
 
-const server = http.createServer(routes);
+app.use(bodyParser.urlencoded({extended:true}));
 
-server.listen(8000);
+//importing proper routes in proper order is necessary.
+app.use(adminRoutes);
+app.use(shopRoutes);
+
+app.listen(8000);
