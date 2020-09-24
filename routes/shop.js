@@ -9,11 +9,9 @@ const adminData = require('./admin');
 //exact matching
 router.get("/", (req, res) => {
     console.log(adminData.products);
-    res.sendFile(path.join(rootDir, 'views', 'shop.html'));
+    // res.sendFile(path.join(rootDir, 'views', 'shop.html')); //for connecting html
+    const products = adminData.products;
+    res.render('shop', { prods: products, pageTitle: "My Shop" }); //shortcut that connects to pug easily
 });
-//404 handling
-router.use("/", (req, res) => {
-    res.sendFile(path.join(rootDir, 'views', '404.html'));
-})
 
 module.exports = router;
