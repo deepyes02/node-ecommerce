@@ -8,14 +8,21 @@
 }
 
 .form-control label,
-.form-control input {
+.form-control input,
+.form-control textarea {
     display: block;
+    width: 100%;
 }
 
 .form-control input {
     border: 1px solid #dbc441;
     border-radius: 2px;
     font: inherit;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    outline-color: burlywood;
 }
 
 button {

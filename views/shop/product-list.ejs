@@ -1,12 +1,17 @@
-<%- include('includes/head') %>
+<%- include('../includes/head') %>
     <link rel="stylesheet" href="/css/add-product.css" />
 
     </head>
 
     <body>
-        <%- include('includes/navigation')%>
+        <%- include('../includes/navigation')%>
             <main>
                 <% if (prods.length > 0) { %>
+                    <div>
+                        <h2> Total books available:
+                            <%=prods.length%>
+                        </h2>
+                    </div>
                     <div class="grid">
                         <% for(let product of prods) { %>
                             <article class="card product-item">
@@ -16,22 +21,28 @@
                                     </h1>
                                 </header>
                                 <div class="card_image">
-                                    <img src="https://cdn.pixabay.com/photo/2015/11/19/21/10/knowledge-1052010__340.jpg" alt="a normal book" />
+                                    <img src="<%= product.imageUrl %>" alt="a normal book" />
                                 </div>
                                 <div class="card__content">
-                                    <h2 class="product__price">$19.17</h2>
-                                    <p class="product__description">A very interesting book</p>
+                                    <h2 class="product__price">$
+                                        <%=product.price%>
+                                    </h2>
+                                    <p class="product__description">
+                                        <%=product.description%>
+                                    </p>
                                 </div>
                                 <div class="card__actions">
-                                    <button class="btn">Add To Cart</button>
+                                    <form action="/add-to-cart" method="POST">
+                                        <button class="btn">Add To Cart</button>
+                                    </form>
                                 </div>
                             </article>
                             <% }%>
                     </div>
 
                     <% } else { %>
-                        <h2>No products found</h2>
+                        <h2>Sorry, No products found</h2>
                         <% } %>
             </main>
 
-            <%- include('includes/tail') %>
+            <%- include('../includes/tail') %>
