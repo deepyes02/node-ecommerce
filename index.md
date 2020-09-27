@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+#Ecommerce
+Ecommerce is always a great project to practice. As it is complex by nature, a lot about routing and middleware can be learned. 
 
-You can use the [editor on GitHub](https://github.com/deepyes02/node-ecommerce/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## NODE AND EXPRESS
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I am really exciting about using Nodejs in development, since there's very little that Javascript can't do. After the completion of this repository, I will move it into a project where there will be extension of desktop apps if possible. 
 
-### Markdown
+The end product will be an ecommerce site, but this knowledge can be applied in any other websites since ecommerce is complex by nature.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+I am looking to implement a good CMS either via npm or some useful ones already available. May be there is a solution to this like in the django framework, since the backend is out of the box available. In express we have to manage everything so let's see. May be barebone html and css is enough as well.
 
-```markdown
-Syntax highlighted code block
+###Starting a nodejs server
+With express this comes easy. yarn init and some few lines of code and the server is ready to go. The challenge is to build on the top of the entry nodejs file. 
 
-# Header 1
-## Header 2
-### Header 3
+###using express
+After installing express, 
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+`
+yarn init;
+yarn add express body-parser;
+yard add ejs nodemon;
+`
 
-**Bold** and _Italic_ and `Code` text
+### Database
+Implemention Mysql is useful I think. Currently I am using local files to create and manipulate small data. The website also contains separate views for:
 
-[Link](url) and ![Image](src)
-```
+1. admin
+2. visitors
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/deepyes02/node-ecommerce/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**Admins** are both __superusers__ and __users__ whereas all other visitors are normal users or **visitors**
