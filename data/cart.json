@@ -2,16 +2,16 @@
     "products": [
         {
             "id": "820384",
-            "qty": 1
+            "qty": 3
         },
         {
             "id": "492299",
-            "qty": 1
+            "qty": 2
         },
         {
             "id": "68773",
             "qty": 2
         }
     ],
-    "totalPrice": 922
+    "totalPrice": 1722
 }
