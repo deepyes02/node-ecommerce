@@ -7,6 +7,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
 }
 
 main {
@@ -97,9 +98,10 @@ main {
 
 .btn {
     font: inherit;
-    border: 1px solid #00695c;
+    border:none;
+    padding: 5px;
     color: #00695c;
-    background: white;
+    background: rgb(217, 223, 53);
     border-radius: 3px;
     cursor: pointer;
 }
