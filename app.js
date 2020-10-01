@@ -25,11 +25,30 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
+//define a req.user model to user in the applicaiton
+app.use((req,res,next) => {
+  User.findByPk(1)
+    .then(user=>{
+      req.user = user;
+    })
+    .catch(err=>console.log(err))
+    next();
+})
+
 //relationship
 Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
 User.hasMany(Product);
 
-sequelize.sync()
+sequelize.sync({force:true})
+.then(result=>{
+  return User.findByPk(1);
+})
+.then(user=>{
+  if(!user){
+    return User.create({name: 'deepyes02', email: 'deepyes@outlook.com'})
+  }
+  return user;
+})
 .then(() => {
   const port = 8000;
   app.listen(port, () => {
