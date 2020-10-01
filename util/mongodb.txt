@@ -1,0 +1,3 @@
+user: deepyes02
+database: nosql_node_udemy
+password: j3kbzaEhes0jjbQ3
