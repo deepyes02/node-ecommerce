@@ -1,3 +1,5 @@
 user: deepyes02
 database: nosql_node_udemy
 password: j3kbzaEhes0jjbQ3
+
+mongodb+srv://deepyes02:j3kbzaEhes0jjbQ3@deepyes02.qegbb.mongodb.net/test

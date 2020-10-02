@@ -8,7 +8,7 @@ const mongoConnect = callback => {
 
 MongoClient.connect(uri, {useUnifiedTopology:true})
     .then(client=>{
-        console.log('Connected');
+        console.log('Database Connected');
         _db = client.db();
     })
     .catch(err=>{
