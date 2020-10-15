@@ -12,7 +12,7 @@ router.get('/products', shopController.getProducts); //static route comes before
 
 router.get('/products/:productId', shopController.getSingleProduct); //dynamic routes come after
 
-router.get('/cart', shopController.getCart);
+// router.get('/cart', shopController.getCart);
 router.post('/cart', shopController.postCart);
 // router.post("/delete-cart-item", shopController.postCartDeleteProduct);
 
