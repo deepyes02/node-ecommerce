@@ -1,24 +1,51 @@
 <%- include('../includes/head.ejs') %>
-    </head>
+<style>
+
+    .order-container{
+        display: block;
+        background-color: yellow;
+    }
+.order-list li {
+    display: flex;
+    justify-content: space-around;
+}
+</style>    
+
+</head>
 
     <body>
         <%- include('../includes/navigation.ejs') %>
             <main>
                 <% if(orders.length <= 0) { %>
-                <h1>Nothing there!</h1>
+                <h1>You don't have any orders yet!</h1>
                 <% }  else { %>
-                <ul>
+               
                     <% orders.forEach(order=> { %>
-                        <li>
-                            <h2># <%=order.id %></h2>
-                            <ul>
-                                <% order.products.forEach(product=>{ %>
-                                    <li><%= product.title %>: (<%=product.orderItem.quantity%>) </li>
-                                <% }) %>
-                            </ul>
-                        </li>
-                    <% }) %>
-                </ul>
+                        <h2> Dear <%=order.user.name%>, here is your order summary.</h2>
+                        <h3>Unique Order ID: <%=order._id %></h3>
+                        <div class="order-container">
+                            <ol class="order-list">
+                                <% order.items.forEach(product=>{ %>
+                                <li>
+                                    <span>
+                                        Item: <%= product.title %>
+                                    </span>
+                                     <h3>
+                                        Qty: (<%=product.quantity%>)
+                                     </h3> 
+                                     <p>
+                                        Unit Price: <%=product.price%>
+                                     </p>
+                                     <p>
+                                        Total: <%=product.quantity * product.price %>
+                                     </p>
+
+                                </li>
+                                        <% }) %>
+                                    
+                            <% }) %>
+                        </ol>
+                        </div>
                 <% } %>
             </main>
             <%- include('../includes/end.ejs') %>

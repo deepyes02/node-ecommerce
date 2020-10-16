@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // define a req.user model to user in the applicaiton
 app.use((req, res, next) => {
-  User.findById('5f882565bba2f4e9cce15fdf')
+  User.findById('5f8888f49ec49f9d68c3ea91')
     .then(user => {
       req.user = new User(user.name, user.email, user.cart, user._id);
       next();
